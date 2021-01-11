@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button, Icon,Input } from 'semantic-ui-react'
+import { Container, Grid, Image,Button, Icon,Input,h1,h4 } from 'semantic-ui-react'
 import Link from 'next/link'
+import Intro from '../components/Intro'
 
 export default function Home() {
   return (
@@ -10,14 +11,15 @@ export default function Home() {
         <title>README.md Reader</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Analyze Your Repos</h1>
-      <h4>Enter your username, see your README Status</h4>
-      <Input action='Get README Info' placeholder='Your Github Username' />
-
+      <Grid centered columns={1} padded>
+        <Grid.Column>
+          <Intro></Intro>
+        </Grid.Column>
+      </Grid>
 
       <footer className={styles.footer}>
       <Link href="https://www.github.com/ajmarkow/readme_reader">
-        <p><Button color ='github'><Icon name='github' />Project on Github</Button></p>
+        <p><Button inverted color ='blue'><Icon name='github' />Project on Github</Button></p>
       </Link>
       </footer>
     </div>

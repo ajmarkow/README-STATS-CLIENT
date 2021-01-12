@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>README.md Reader</title>
+        <title>README Check</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Grid centered columns={1} padded>

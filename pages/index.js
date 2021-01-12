@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import { Container, Grid, Image,Button, Icon,Input,h1,h4 } from 'semantic-ui-react'
 import Link from 'next/link'
 import Intro from '../components/Intro'
+import RepoList from '../components/RepoList'
 
 export default function Home() {
   return (
@@ -13,7 +14,12 @@ export default function Home() {
       </Head>
       <Grid centered columns={1} padded>
         <Grid.Column>
-          <Intro></Intro>
+          <Grid.Row>
+            <Intro></Intro>
+          </Grid.Row>
+          <Grid.Row>
+            <RepoList></RepoList>>
+          </Grid.Row>
         </Grid.Column>
       </Grid>
 

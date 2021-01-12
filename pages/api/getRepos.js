@@ -1,18 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const repos = require('repos')
 const options = {
-  token: 'placeholder'
+  token: '18676583cc72e6c2a8c72a75a4166000d32ca523'
 }
 export default (req, res) => {
   let listOfRepos= [];
-  let countOfRepos=0
   res.statusCode = 200
-  let result = repos(['ajmarkow'],options)
+  let result = repos(['leerob'],options)
   .then( function(repos) {
-    repos.forEach(element =>
-      listOfRepos.push(element.full_name));
-      return countOfRepos+=1
-    res.json(listOfRepos)
+    repos.forEach(item =>
+      listOfRepos.push(item.full_name));
+      res.json(listOfRepos)
   })
-  console.log(countOfRepos)
+  console.log('Done')
 }

@@ -18,7 +18,7 @@ export default function Home() {
             <Intro></Intro>
           </Grid.Row>
           <Grid.Row>
-            <RepoList></RepoList>>
+            <RepoList></RepoList>
           </Grid.Row>
         </Grid.Column>
       </Grid>

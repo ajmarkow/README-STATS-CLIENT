@@ -1,21 +1,21 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const repos = require('repos')
-const readmeInspector = require('readme-inspector')
-readmeInspector.authenticate({
-  token: 'placeholder',
-})
-const options = {
-  token: 'placeholder'
-}
+
 export default (req, res) => {
   let listOfRepos= [];
+  let scoresForRepos=[]
   res.statusCode = 200
-  let result = repos(['leerob'],options)
+  let result = repos(['leerob'])
   .then( function(repos) {
     repos.forEach(item =>
       listOfRepos.push(item.full_name));
-      // listOfRepos.map(item => readmeInspector.getReadmeScore(`https://github.com/${item}`))
-      res.json(listOfRepos)
+      for (const repo of listOfRepos) {
+        await fetch(`http://readme-score.herokuapp.com/score.json?url=${repo}&human_breakdown=true&force=false`).then(function(response){
+          return scoresForRepos.push(response);
+        })
+        console.log(scoresForRepos);
+      }
+      res.json(scoresForRepos)
   })
   console.log('Done')
 }

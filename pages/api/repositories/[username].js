@@ -9,7 +9,7 @@ const options = {
    response
   response.forEach((item) =>
     array.push(item.full_name));
-    console.log(array);
+
     return array;
       };
 

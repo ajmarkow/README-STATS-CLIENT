@@ -13,11 +13,13 @@ export default function Home() {
         <title>README Check</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Grid centered columns={1} padded>
-      <RepoList></RepoList>
-
-      </Grid>
-
+      <Intro />
+      <div class='ui grid'>
+      <div class="ten wide column">
+        <RepoList></RepoList>
+      </div>
+  <div class="six wide column"></div>
+      </div>
       <footer className={styles.footer}>
       <Link href="https://www.github.com/ajmarkow/readme_reader">
         <p><Button inverted color ='blue'><Icon name='github' />Project on Github</Button></p>

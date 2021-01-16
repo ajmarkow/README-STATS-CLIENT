@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
-body,h6,h5 {
+body,h6,h5, h4, li {
   padding: 0;
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
@@ -14,4 +14,15 @@ h1{
 
 h6,h5{
   font-size: 3%;
+}
+
+ul,h4{
+  padding-top:10%;
+  margin-left:15%;
+}
+li{
+  text-align:left;
+  margin-right:40%;
+  margin-left:5%;
+  text-overflow: ellipsis;
 }

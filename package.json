@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@bit/bit.evangelist.elements.heading": "^1.1.0",
+    "get-all-github-repos": "^1.0.1",
     "next": "10.0.5",
     "next-transpile-modules": "^6.0.0",
+    "octokit": "^1.0.0-hello-world",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.1"
+    "semantic-ui-react": "^2.0.2"
   },
   "bit": {
     "env": {},

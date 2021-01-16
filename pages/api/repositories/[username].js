@@ -1,11 +1,11 @@
 import repos from 'repos';
 const options = {
-  token: ''
+  token: process.env(['GIT_TOKEN'])
 }
 export default (req, res) => {
-  function addResponse(response){
+  function addResponse(response,array){
     response.forEach((item) =>
-      console.log(item.full_name));
+      array.push(item.full_name));
         };
   const {
     query: { username }
@@ -14,7 +14,7 @@ export default (req, res) => {
   let listOfRepos= [];
   res.statusCode = 200;
   let response = repos([`${username}`])
-  .then( (response) => addResponse(response));
+  .then( (response) => addResponse(response,listOfRepos));
     res.json(listOfRepos)
   console.log('Done')
   }

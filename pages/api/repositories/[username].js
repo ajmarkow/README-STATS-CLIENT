@@ -22,4 +22,5 @@ export default async (req, res) => {
   res.end(aj_json);
     console.log(returned_repos)
   console.log('Done')
+  listOfRepos.length = 0;
   }

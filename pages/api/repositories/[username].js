@@ -1,22 +1,24 @@
 import repos from 'repos';
 let listOfRepos= [];
 const options = {
-  token: 'placeholder'
+  token: process.env.GIT_TOKEN
 }
-function addResponse(response,array){
+async function addResponse(response,array){
+  await response
   response.forEach((item) =>
     array.push(item.full_name));
+    console.log(array);
     return array;
       };
 
-export default (req, res) => {
+export default async (req, res) => {
   const {
     query: { username }
   } = req
-  console.log([`${username}`],options)
+  console.log([`${username}`])
   res.statusCode = 200;
-  let returned_repos = repos([`${username}`])
-  .then( (response) => addResponse(response,listOfRepos));
+  let returned_repos = repos([`${username}`],options).then( (response) => addResponse(response,listOfRepos));
     res.json(returned_repos)
+    console.log(returned_repos)
   console.log('Done')
   }

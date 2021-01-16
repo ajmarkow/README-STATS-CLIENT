@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Intro from '../components/Intro'
 import RepoList from '../components/RepoList'
 
+
 export default function Home() {
   return (
     <div>
@@ -13,14 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Grid centered columns={1} padded>
-        <Grid.Column>
-          <Grid.Row>
-            <Intro></Intro>
-          </Grid.Row>
-          <Grid.Row>
-            <RepoList></RepoList>
-          </Grid.Row>
-        </Grid.Column>
+      <RepoList></RepoList>
+
       </Grid>
 
       <footer className={styles.footer}>

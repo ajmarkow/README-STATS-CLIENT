@@ -23,7 +23,6 @@ export default async (req, res) => {
     .then( (response) => addResponse(response,listOfRepos))
     .catch((error) => { 
       let errorMessage= JSON.stringify(error)
-      console.log(errorMessage);
       res.status(404).json({ body: `${error}` })
     })
   let repositoriesAsJSON = JSON.stringify(returned_repos);  

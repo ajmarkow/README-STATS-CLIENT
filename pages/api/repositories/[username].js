@@ -3,8 +3,8 @@ let listOfRepos= [];
 const options = {
   token: process.env.GIT_TOKEN
 }
-async function addResponse(response,array){
-  await response
+ function addResponse(response,array){
+   response
   response.forEach((item) =>
     array.push(item.full_name));
     console.log(array);
@@ -17,8 +17,9 @@ export default async (req, res) => {
   } = req
   console.log([`${username}`])
   res.statusCode = 200;
-  let returned_repos = repos([`${username}`],options).then( (response) => addResponse(response,listOfRepos));
-    res.json(returned_repos)
+  let returned_repos = await repos([`${username}`],options).then( (response) => addResponse(response,listOfRepos));
+  let aj_json = JSON.stringify(returned_repos);  
+  res.end(aj_json);
     console.log(returned_repos)
   console.log('Done')
   }

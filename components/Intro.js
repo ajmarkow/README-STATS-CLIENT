@@ -1,4 +1,4 @@
-import {Container, Input,h1,h4} from 'semantic-ui-react';
+import {Container, Input} from 'semantic-ui-react';
 import Image from 'next/image';
 
 export default function Intro() {
